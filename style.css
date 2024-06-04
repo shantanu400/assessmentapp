@@ -1,0 +1,108 @@
+
+body{
+  
+    background: rgb(206, 171, 177);
+    background-image:url(./img/test_yourself.jpg);
+    background-size: 100%,100%;
+    background-repeat: no-repeat;
+    margin: 0%;
+    padding: 0%;
+    }
+button:focus {
+    outline: 2px solid red;
+}
+h1{
+    color: #fafafa;
+    text-align: center;
+    text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+
+.card1{
+    display: flex;
+    justify-content: space-between; 
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+    
+    
+    
+    
+}
+.card2{
+    display: flex;
+    justify-content: space-between; 
+    padding-left: 100px;
+    padding-right: 100px;
+  
+    
+    
+}
+#DSA{
+    
+    display: flex;
+    justify-content: center;
+    height:200px;
+    width: 350px;
+    background-image: url(/img/dsa.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    align-items: center;
+    text-align: center;
+    
+    border: 2px solid rgb(80, 134, 180);
+    border-radius: 5px;
+
+}
+
+
+#Web_Dev{
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(222, 215, 12);
+    border: 2px solid rgb(148, 214, 34);
+    border-radius: 5px;
+    height:200px;
+    width: 350px;
+    background-image: url(/img/webdev.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;  /* To prevent repeating of the image */
+    background-position: center;  /* To center the image in the button */}
+
+#SQL{
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(12, 187, 245);
+    border: 2px solid rgb(197, 245, 4);
+    border-radius: 5px;
+    height:200px;
+    width: 350px;
+    background-image: url(/img/sql.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+#Com{
+    height: 150px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(145, 107, 236);
+    border: 2px solid rgb(8, 239, 54);
+    border-radius: 5px;
+    height:200px;
+    width: 350px;
+    background-image: url(/img/com.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
