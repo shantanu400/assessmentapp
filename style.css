@@ -1,108 +1,105 @@
 
+
+
 body{
   
     background: rgb(206, 171, 177);
     background-image:url(./img/test_yourself.jpg);
-    background-size: 100%,100%;
+    background-size: cover;
+    
     background-repeat: no-repeat;
-    margin: 0%;
-    padding: 0%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
     }
-button:focus {
-    outline: 2px solid red;
-}
+
 h1{
     color: #fafafa;
-    text-align: center;
+  
     text-decoration-line: underline;
   text-decoration-style: dotted;
 }
 
-.card1{
+#quiz-container{
+    height: fit-content;   /*  70vh means the height of my screen which is visible now it will take 70% of that  means if we roll page it will not keep increasing its width . To make possible that it keep increasing its width we use height:fit-content  */
     display: flex;
-    justify-content: space-between; 
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 50px;
-    
-    
-    
-    
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+
+ 
 }
-.card2{
-    display: flex;
-    justify-content: space-between; 
-    padding-left: 100px;
-    padding-right: 100px;
-  
-    
-    
+.card{
+    width: 350px !important;
+    box-sizing: border-box;
+    margin-top: 5px;
 }
-#DSA{
+
+.img1{
     
-    display: flex;
-    justify-content: center;
-    height:200px;
-    width: 350px;
-    background-image: url(/img/dsa.jpg);
-    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background-size:cover;
-    align-items: center;
-    text-align: center;
-    
     border: 2px solid rgb(80, 134, 180);
     border-radius: 5px;
 
 }
 
-
-#Web_Dev{
-    height: 150px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(222, 215, 12);
-    border: 2px solid rgb(148, 214, 34);
-    border-radius: 5px;
-    height:200px;
-    width: 350px;
-    background-image: url(/img/webdev.jpg);
-    background-size: contain;
-    background-repeat: no-repeat;  /* To prevent repeating of the image */
-    background-position: center;  /* To center the image in the button */}
-
-#SQL{
-    height: 150px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(12, 187, 245);
-    border: 2px solid rgb(197, 245, 4);
-    border-radius: 5px;
-    height:200px;
-    width: 350px;
-    background-image: url(/img/sql.jpg);
-    background-repeat: no-repeat;
+.img2{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     background-size:cover;
+    border: 2px solid rgb(80, 134, 180);
+    border-radius: 5px;
+
+}
+.img3{
+    
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-size:cover;
+    border: 2px solid rgb(80, 134, 180);
+    border-radius: 5px;
+
 }
 
-#Com{
-    height: 150px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-color: rgb(145, 107, 236);
-    border: 2px solid rgb(8, 239, 54);
-    border-radius: 5px;
-    height:200px;
-    width: 350px;
-    background-image: url(/img/com.jpg);
-    background-repeat: no-repeat;
+.img4{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* used to fill with the image without resizing defined for image only  */
     background-size:cover;
+    border: 2px solid rgb(80, 134, 180);
+    border-radius: 5px;
 }
+
+.card:hover {
+    background-color: yellow;
+    }
+.selected{
+    background-color: blanchedalmond;
+}
+#question{
+    color: #fafafa;
+    
+}
+#options{
+    color: hsl(300, 79%, 85%);
+    
+}
+    
+@media (max-width: 600px) {
+    body {
+      background-color: rgb(187, 220, 40);
+      height: fit-content;
+    }
+    .container{
+        background-image: url(./img/test_yourself.jpg);
+        height: fit-content;      /*   To make possible that it keep increasing its width we use height:fit-content  */
+    }
+  }
