@@ -357,6 +357,8 @@ document.addEventListener('DOMContentLoaded',function(){
         })
     }
     function startQuiz(index){
+        let bodystyle=document.getElementById("bg");
+        bodystyle.style.background="url(/img/test_start.jpg)";
         let currentQuestions=quizData.sections[index].questions;
         let currentQuestionIndex=0;
         let score=0;
@@ -364,7 +366,9 @@ document.addEventListener('DOMContentLoaded',function(){
         document.getElementById("quiz-container").style.display="none";
         document.getElementById("question-container").style.display="block";
         document.getElementById("question-container").innerHTML=`
-        <div id="score">score: 0</div>
+        <div  id="score">
+            <p >score: 0</p>
+        </div>
         <div id="question"></div>
         <div id="options"></div>
         <button class="btn btn-primary" id="next-button">Next </button>
@@ -437,19 +441,23 @@ document.addEventListener('DOMContentLoaded',function(){
         function endtest(){
             let questionContainer=document.getElementById('question-container');
             let quizContainer=document.getElementById('quiz-container');
+            let body=document.querySelector("body");
             questionContainer.innerHTML=`
-            <h1>Quiz Completed!!!💫</h1>
-            <p>Your Final Score: ${score}/${currentQuestions.length}</p>
+            <h1 style="color:black;">Quiz Completed!!!💫</h1>
+            <p  style="color:red">Your Final Score: ${score}/${currentQuestions.length}</p>
             <button id="homebtn" class="btn btn-primary">Go To Home</button>`;
             
             document.getElementById('homebtn').addEventListener('click', function(){
-                quizContainer.style.display="grid";
+                let bodystyle=document.getElementById("bg");
                 questionContainer.style.display='none';
+                quizContainer.style.display="flex";
+                bodystyle.style.background="url(./img/test_yourself.jpg)";
+                
             });
         }
         document.getElementById("next-button").addEventListener("click",()=>{
             if(currentQuestionIndex==currentQuestions.length-1){
-               console.log(" quizOver();");
+              
                endtest();
             }
             else{
