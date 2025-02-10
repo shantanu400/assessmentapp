@@ -1,470 +1,372 @@
-document.addEventListener('DOMContentLoaded',function(){
-    
-    let quizData=
-    {
-        sections: [
-          {
-            sectionTitle: "DSA",
-            questions: [
-              {
-                questionType: "mcq",
-                question: "Which data structure uses LIFO (Last In, First Out) principle?",
-                options: [
-                  "Queue",
-                  "Stack",
-                  "Linked List",
-                  "Tree"
-                ],
-                answer: "Stack"
-              },
-              {
-                questionType: "mcq",
-                question: "Which traversal method is used to traverse a tree in a depth-first manner?",
-                options: [
-                  "DFS",
-                  "BFS",
-                  "Inorder",
-                  "Preorder"
-                ],
-                answer: "DFS"
-              },
-              {
-                questionType: "text",
-                question: "In which data structure are elements added and removed from the same end?",
-                answer: "Stack"
-              },
-              {
-                questionType: "text",
-                question: "What is the data structure used for breadth-first traversal of a graph?",
-                answer: "Queue"
-              },
-              {
-                questionType: "number",
-                question: "What is the time complexity of the binary search algorithm?",
-                answer: 1
-              },
-              {
-                questionType: "number",
-                question: "How many vertices are there in a complete binary tree with height 4?",
-                answer: 15
-              },
-              {
-                questionType: "mcq",
-                question: "Which of the following problems can be solved using a dynamic programming approach?",
-                options: [
-                  "Depth-First Search in a graph",
-                  "Binary Search in a sorted array",
-                  "Longest Common Subsequence",
-                  "Traveling Salesman Problem"
-                ],
-                answer: "Longest Common Subsequence"
-              },
-              {
-                questionType: "mcq",
-                question: "Which sorting algorithm has a time complexity of O(n log n) in the average and worst-case scenarios?",
-                options: [
-                  "Quick Sort",
-                  "Bubble Sort",
-                  "Merge Sort",
-                  "Insertion Sort"
-                ],
-                answer: "Merge Sort"
-              },
-              {
-                questionType: "mcq",
-                question: "Which data structure organizes data in a hierarchical manner?",
-                options: [
-                  "Array",
-                  "Linked List",
-                  "Stack",
-                  "Tree"
-                ],
-                answer: "Tree"
-              },
-              {
-                questionType: "text",
-                question: "What is the name of the process used to remove elements from a stack?",
-                answer: "Pop"
-              },
-              {
-                questionType: "text",
-                question: "What is the term used to describe the process of inserting elements into a queue?",
-                answer: "Enqueue"
-              },
-              {
-                questionType: "number",
-                question: "What is the maximum number of edges in a complete undirected graph with n vertices?",
-                answer: "n(n-1)/2"
-              },
-              {
-                questionType: "number",
-                question: "How many leaf nodes are there in a binary tree with 10 vertices?",
-                answer: 5
-              },
-              {
-                questionType: "mcq",
-                question: "Which algorithm is used to find the shortest path in a weighted graph?",
-                options: [
-                  "BFS",
-                  "DFS",
-                  "Dijkstra's",
-                  "Bellman-Ford"
-                ],
-                answer: "Dijkstra's"
-              },
-              {
-                questionType: "mcq",
-                question: "Which data structure is suitable for implementing a dictionary with fast search, insert, and delete operations?",
-                options: [
-                  "Queue",
-                  "Hash Table",
-                  "Heap",
-                  "Binary Search Tree"
-                ],
-                answer: "Hash Table"
-              },
-              {
-                questionType: "mcq",
-                question: "Which algorithm is used to sort elements by repeatedly partitioning the array into two halves?",
-                options: [
-                  "Bubble Sort",
-                  "Quick Sort",
-                  "Merge Sort",
-                  "Selection Sort"
-                ],
-                answer: "Quick Sort"
-              }
-            ]
-          },
-          {
-            sectionTitle: "Web-Dev",
-            questions: [
-              {
-                questionType: "mcq",
-                question: "Which language is used for styling web pages?",
-                options: [
-                  "HTML",
-                  "JavaScript",
-                  "CSS",
-                  "Python"
-                ],
-                answer: "CSS"
-              },
-              {
-                questionType: "mcq",
-                question: "Which of the following tags is used to define a hyperlink in HTML?",
-                options: [
-                  "<a>",
-                  "<link>",
-                  "<h1>",
-                  "<p>"
-                ],
-                answer: "<a>"
-              },
-              {
-                questionType: "text",
-                question: "What does CSS stand for?",
-                answer: "Cascading Style Sheets"
-              },
-              {
-                questionType: "text",
-                question: "What is the purpose of the 'alt' attribute in an <img> tag?",
-                answer: "Alternative"
-              },
-              {
-                questionType: "number",
-                question: "How many heading tags (<h1> to <h6>) are available in HTML?",
-                answer: 6
-              },
-              {
-                questionType: "number",
-                question: "How many columns are there in a Bootstrap grid system by default?",
-                answer: 12
-              },
-              {
-                questionType: "number",
-                question: "What is the maximum number of edges in a complete undirected graph with n vertices?",
-                answer: "n(n-1)/2"
-              }
-            ]
-          },
-          {
-            sectionTitle: "SQL",
-            questions: [
-              {
-                questionType: "mcq",
-                question: "Which keyword is used to retrieve data from a database in SQL?",
-                options: [
-                  "SELECT",
-                  "FROM",
-                  "WHERE",
-                  "JOIN"
-                ],
-                answer: "SELECT"
-              },
-              {
-                questionType: "mcq",
-                question: "Which SQL keyword is used to retrieve only unique values?",
-                options: [
-                  "DISTINCT",
-                  "UNIQUE",
-                  "SELECT DISTINCT",
-                  "ALL"
-                ],
-                answer: "DISTINCT"
-              },
-              {
-                questionType: "text",
-                question: "What does SQL stand for?",
-                answer: "Structured Query Language"
-              },
-              {
-                questionType: "text",
-                question: "What is the purpose of the 'GROUP BY' clause in SQL?",
-                answer: "To group rows that have the same values into summary rows"
-              },
-              {
-                questionType: "number",
-                question: "How many primary key columns can a table have in SQL?",
-                answer: 1
-              },
-              {
-                questionType: "number",
-                question: "What is the maximum number of characters allowed in a VARCHAR column in SQL?",
-                answer: 65535
-              },
-              {
-                questionType: "number",
-                question: "What is the result of 5 + NULL in SQL?",
-                answer: "NULL"
-              },
-              {
-                sectionTitle: "Communication",
-                questions: [
-                  {
-                    questionType: "mcq",
-                    question: "Which of the following is an example of non-verbal communication?",
-                    options: [
-                      "Writing a letter",
-                      "Using sign language",
-                      "Sending an email",
-                      "Making a phone call"
-                    ],
-                    answer: "Using sign language"
-                  },
-                  {
-                    questionType: "mcq",
-                    question: "Which communication skill involves paying attention to both verbal and non-verbal cues?",
-                    options: [
-                      "Active listening",
-                      "Public speaking",
-                      "Negotiation",
-                      "Conflict resolution"
-                    ],
-                    answer: "Active listening"
-                  },
-                  {
-                    questionType: "text",
-                    question: "What does 'empathy' mean in the context of communication?",
-                    answer: "Understanding and sharing the feelings of others"
-                  },
-                  {
-                    questionType: "text",
-                    question: "What is the purpose of paraphrasing in communication?",
-                    answer: "To restate or rephrase what someone else has said in your own words"
-                  },
-                  {
-                    questionType: "number",
-                    question: "On a scale of 1 to 10, how important is body language in effective communication?",
-                    answer: 9
-                  },
-                  {
-                    questionType: "number",
-                    question: "How many components are there in the communication process model?",
-                    answer: 5
-                  },
-                  {
-                    questionType: "number",
-                    question: "What is the recommended distance for personal space in most Western cultures?",
-                    answer: 18
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            sectionTitle: "Communication",
-            questions: [
-              {
-                questionType: "mcq",
-                question: "Which keyword is used to retrieve data from a database in SQL?",
-                options: [
-                  "SELECT",
-                  "FROM",
-                  "WHERE",
-                  "JOIN"
-                ],
-                answer: "SELECT"
-              },
-              {
-                questionType: "mcq",
-                question: "Which SQL keyword is used to retrieve only unique values?",
-                options: [
-                  "DISTINCT",
-                  "UNIQUE",
-                  "SELECT DISTINCT",
-                  "ALL"
-                ],
-                answer: "DISTINCT"
-              },
-              {
-                questionType: "text",
-                question: "What does SQL stand for?",
-                answer: "Structured Query Language"
-              },
-              {
-                questionType: "text",
-                question: "What is the purpose of the 'GROUP BY' clause in SQL?",
-                answer: "To group rows that have the same values into summary rows"
-              },
-              {
-                questionType: "number",
-                question: "How many primary key columns can a table have in SQL?",
-                answer: 1
-              },
-              {
-                questionType: "number",
-                question: "What is the maximum number of characters allowed in a VARCHAR column in SQL?",
-                answer: 65535
-              },
-              {
-                questionType: "number",
-                question: "What is the result of 5 + NULL in SQL?",
-                answer: "NULL"
-              }
-            ]
-          }
-        ]
-      } ;
-      initSections();   
-    function initSections(){
-        let sections=document.querySelectorAll('.card');
-        sections.forEach((section)=>{
-            section.addEventListener('click',()=>{
-                let sectionNumber=parseInt(section.getAttribute("data-section"));
-                startQuiz(sectionNumber);
-            })
-        })
+document.addEventListener(
+  "DOMContentLoaded",
+  (function ()  {
+    let quizData = {
+      sections: [
+        {
+          sectionTitle: "General Knowledge",
+          questions: [
+            {
+              questionType: "mcq",
+              question: "What is the tallest mountain in the world?",
+              options: ["Mount Everest", "K2", "Kangchenjunga", "Lhotse"],
+              answer: "Mount Everest",
+            },
+            {
+              questionType: "text",
+              question: "What is the capital of Italy?",
+              answer: "Rome",
+            },
+            {
+              questionType: "number",
+              question: "How many continents are there?",
+              answer: 7,
+            },
+            {
+              questionType: "mcq",
+              question: "Which ocean is the largest?",
+              options: ["Atlantic", "Indian", "Pacific", "Arctic"],
+              answer: "Pacific",
+            },
+            {
+              questionType: "text",
+              question: "Who wrote 'Romeo and Juliet'?",
+              answer: "William Shakespeare",
+            },
+            {
+              questionType: "number",
+              question: "In what year did the Titanic sink?",
+              answer: 1912,
+            },
+            {
+              questionType: "mcq",
+              question: "What is the smallest country in the world?",
+              options: ["Monaco", "Nauru", "Vatican City", "San Marino"],
+              answer: "Vatican City",
+            },
+            {
+              questionType: "text",
+              question: "What is the longest river in the world?",
+              answer: "Nile",
+            },
+            {
+              questionType: "number",
+              question: "How many planets are in the Solar System?",
+              answer: 8,
+            },
+            {
+              questionType: "mcq",
+              question: "Which country is known as the Land of the Rising Sun?",
+              options: ["China", "Japan", "South Korea", "Thailand"],
+              answer: "Japan",
+            },
+          ],
+        },
+        {
+          sectionTitle: "Science",
+          questions: [
+            {
+              questionType: "mcq",
+              question: "What is the chemical symbol for water?",
+              options: ["H2O", "CO2", "O2", "NaCl"],
+              answer: "H2O",
+            },
+            {
+              questionType: "text",
+              question: "What force keeps us on the ground?",
+              answer: "Gravity",
+            },
+            {
+              questionType: "number",
+              question: "At what temperature (Celsius) does water boil?",
+              answer: 100,
+            },
+            {
+              questionType: "mcq",
+              question: "What is the hardest natural substance on Earth?",
+              options: ["Iron", "Diamond", "Quartz", "Granite"],
+              answer: "Diamond",
+            },
+            {
+              questionType: "text",
+              question: "What is the largest planet in our Solar System?",
+              answer: "Jupiter",
+            },
+            {
+              questionType: "number",
+              question: "How many elements are in the periodic table?",
+              answer: 118,
+            },
+            {
+              questionType: "mcq",
+              question: "What is the human body's largest organ?",
+              options: ["Heart", "Skin", "Liver", "Brain"],
+              answer: "Skin",
+            },
+            {
+              questionType: "text",
+              question: "What gas do plants absorb during photosynthesis?",
+              answer: "Carbon Dioxide",
+            },
+            {
+              questionType: "number",
+              question: "How long does Earth take to orbit the Sun (in days)?",
+              answer: 365,
+            },
+            {
+              questionType: "mcq",
+              question:
+                "Which vitamin is produced when the skin is exposed to sunlight?",
+              options: ["Vitamin A", "Vitamin B", "Vitamin C", "Vitamin D"],
+              answer: "Vitamin D",
+            },
+          ],
+        },
+        {
+          sectionTitle: "Mathematics",
+          questions: [
+            {
+              questionType: "mcq",
+              question: "What is the value of Pi (approximate)?",
+              options: ["2.14", "3.14", "4.14", "5.14"],
+              answer: "3.14",
+            },
+            {
+              questionType: "text",
+              question: "What is the term for a shape with three sides?",
+              answer: "Triangle",
+            },
+            {
+              questionType: "number",
+              question: "What is the square root of 64?",
+              answer: 8,
+            },
+            {
+              questionType: "mcq",
+              question: "What is 50% of 200?",
+              options: ["100", "150", "200", "250"],
+              answer: "100",
+            },
+            {
+              questionType: "text",
+              question: "What is the next prime number after 7?",
+              answer: "11",
+            },
+            {
+              questionType: "number",
+              question: "How many degrees are in a right angle?",
+              answer: 90,
+            },
+            {
+              questionType: "mcq",
+              question: "What is the sum of angles in a triangle?",
+              options: ["180", "360", "270", "90"],
+              answer: "180",
+            },
+            {
+              questionType: "text",
+              question: "What is the term for a 10-sided polygon?",
+              answer: "Decagon",
+            },
+            {
+              questionType: "number",
+              question:
+                "If a rectangle has a width of 4cm and a length of 10cm, what is its area (in cm\u00b2)?",
+              answer: 40,
+            },
+            {
+              questionType: "mcq",
+              question: "What is the value of 'x' in the equation 2x + 6 = 14?",
+              options: ["2", "3", "4", "5"],
+              answer: "4",
+            },
+          ],
+        },
+        {
+          sectionTitle: "Indian History",
+          questions: [
+            {
+              questionType: "mcq",
+              question: "Who was the first Emperor of the Maurya Dynasty?",
+              options: ["Ashoka", "Chandragupta Maurya", "Harsha", "Bindusara"],
+              answer: "Chandragupta Maurya",
+            },
+            {
+              questionType: "text",
+              question: "What was the capital of the Mughal Empire?",
+              answer: "Agra",
+            },
+            {
+              questionType: "number",
+              question: "In what year did India gain independence?",
+              answer: 1947,
+            },
+            {
+              questionType: "mcq",
+              question: "Who was the founder of the Gupta Empire?",
+              options: [
+                "Samudragupta",
+                "Chandragupta I",
+                "Chandragupta II",
+                "Kumaragupta",
+              ],
+              answer: "Chandragupta I",
+            },
+            {
+              questionType: "text",
+              question: "Which city was the capital of the Maratha Empire?",
+              answer: "Pune",
+            },
+            {
+              questionType: "number",
+              question: "In what century did the Battle of Plassey take place?",
+              answer: 18,
+            },
+            {
+              questionType: "mcq",
+              question: "Who was the first female ruler of Delhi Sultanate?",
+              options: [
+                "Razia Sultana",
+                "Mumtaz Mahal",
+                "Noor Jahan",
+                "Jodha Bai",
+              ],
+              answer: "Razia Sultana",
+            },
+            {
+              questionType: "text",
+              question:
+                "What was the main language of administration under the Mughal Empire?",
+              answer: "Persian",
+            },
+            {
+              questionType: "number",
+              question: "How many years did the British Raj last in India?",
+              answer: 90,
+            },
+            {
+              questionType: "mcq",
+              question:
+                "Which year marked the start of the British East India Company's rule in India?",
+              options: ["1600", "1757", "1858", "1947"],
+              answer: "1757",
+            },
+          ],
+        },
+      ],
+    };
+    initSection();
+
+    function initSection() {
+      let sections = document.querySelectorAll(".section");
+      sections.forEach((section) => {
+        section.addEventListener("click", () => {
+          let sectionNumber = parseInt(section.getAttribute("data-section"));
+          startQuiz(sectionNumber);
+        });
+      });
     }
-    function startQuiz(index){
-        let bodystyle=document.getElementById("bg");
-        bodystyle.style.background="url(/img/test_start.jpg)";
-        let currentQuestions=quizData.sections[index].questions;
-        let currentQuestionIndex=0;
-        let score=0;
-        let answerSelected=false;
-        document.getElementById("quiz-container").style.display="none";
-        document.getElementById("question-container").style.display="block";
-        document.getElementById("question-container").innerHTML=`
-        <div  id="score">
-            <p >score: 0</p>
-        </div>
+
+    function startQuiz(index) {
+      let currentQuestions = quizData.sections[index].questions;
+      let currentQuestionsIndex = 0;
+      let score = 0;
+      let answerSelected = false;
+      document.getElementById("quiz-container").style.display = "none";
+      document.getElementById("question-container").style.display = "block";
+      document.getElementById("question-container").innerHTML=`
+
+       <p id="score">Score:0</p>
         <div id="question"></div>
         <div id="options"></div>
-        <button class="btn btn-primary" id="next-button">Next </button>
-        `;
-        
-        showQuestions();
-        function showQuestions(){
-            const questionobj=currentQuestions[currentQuestionIndex];
-            const questionElement=document.getElementById('question');
-            const optionsElement=document.getElementById('options');
-            questionElement.textContent=questionobj.question;
-            optionsElement.innerHTML='';
+        <button id="next-button">Next</button>
+      `
+      showQuesiotn();
 
-            if(questionobj.questionType==='mcq'){
-                questionobj.options.forEach((option)=>{
-                    const optionElement=document.createElement('div');
-                    optionElement.textContent=option;
-                    optionElement.addEventListener('click',function (){
-                        if(!answerSelected){
-                            answerSelected=true;
-                            optionElement.classList.add("selected");
-                            checkAnswer(option,questionobj.answer);
-                            console.log("sel",option);
-                        }
-                        
-                    });
-                    optionsElement.appendChild(optionElement);
-                })
-                
-
-            }
-            else{
-                const inputElement=document.createElement('input');
-                inputElement.type=questionobj.questionType ==='number'? 'number':'text';
-                const submitButton=document.createElement('button');
-                submitButton.className='btn btn-secondary';
-                submitButton.textContent="Submit";
-                submitButton.onclick=()=>{
-                    if(!answerSelected){
-                        answerSelected=true;
-                        checkAnswer(inputElement.value.toString(),questionobj.answer.toString());
-                    }
-                };
-                optionsElement.appendChild(inputElement);
-                optionsElement.appendChild(submitButton);
-
-            }
-            function checkAnswer(givenAnswer,correctAnswer){
-                const feedbackElement=document.createElement('div');
-                feedbackElement.id='feedback';
-                if(givenAnswer==correctAnswer ||givenAnswer.toLowerCase()==correctAnswer.toLowerCase() ){
-                    score++;
-                    feedbackElement.textContent='correct';
-                    feedbackElement.style.color='green';
-                }
-                else{
-                    feedbackElement.textContent=`Wrong Answered. Correct option is ${correctAnswer}`;
-                    feedbackElement.style.color='red';
-                }
-                const optionsElement=document.getElementById('options');
-                optionsElement.appendChild(feedbackElement);
-                updateScore(score);
-            }
-            function updateScore(score){
-                document.getElementById("score").textContent=`Score: ${score}`;
-            }
-        }
-        
-
-        function endtest(){
-            let questionContainer=document.getElementById('question-container');
-            let quizContainer=document.getElementById('quiz-container');
-            let body=document.querySelector("body");
-            questionContainer.innerHTML=`
-            <h1 style="color:black;">Quiz Completed!!!💫</h1>
-            <p  style="color:red">Your Final Score: ${score}/${currentQuestions.length}</p>
-            <button id="homebtn" class="btn btn-primary">Go To Home</button>`;
-            
-            document.getElementById('homebtn').addEventListener('click', function(){
-                let bodystyle=document.getElementById("bg");
-                questionContainer.style.display='none';
-                quizContainer.style.display="flex";
-                bodystyle.style.background="url(./img/test_yourself.jpg)";
-                
-            });
-        }
-        document.getElementById("next-button").addEventListener("click",()=>{
-            if(currentQuestionIndex==currentQuestions.length-1){
+      function showQuesiotn() {
+        const question=currentQuestions[currentQuestionsIndex];
+        const questionElement=document.getElementById("question");
+        const optionsElement=document.getElementById("options")
+        questionElement.textContent=question.question;
+        optionsElement.innerHTML="";
+        if(question.questionType=="mcq"){
               
-               endtest();
+          question.options.forEach((option,index)=>{
+            const optionElement=document.createElement('div');
+            optionElement.textContent=option;
+            optionElement.addEventListener('click',function(){
+              if(!answerSelected){
+              answerSelected=true;
+              optionElement.classList.add("selected");
+              checkAnswer(option,question.answer);}
+            })
+
+            optionsElement.appendChild(optionElement)
+          })
+        }
+        else{
+          const inputElement=document.createElement('input');
+          inputElement.type=question.questionType==="number"?"number":"text"
+          const submitButton=document.createElement("button")
+          submitButton.textContent="Submit Answer"
+          submitButton.className="submit-answer"
+          submitButton.onclick=()=>{
+            if(!answerSelected){
+              answerSelected=true;
+              checkAnswer(inputElement.value.toString(),question.answer.toString());
             }
-            else{
-                answerSelected=false;
-                currentQuestionIndex++;
-                showQuestions();
-            }
-        })
+          }
+          optionsElement.appendChild(inputElement);
+          optionsElement.appendChild(submitButton);
+
+        }
+      }
+      function checkAnswer(userAnswer,questionAnswer  ){
+        const feedbackElement=document.createElement('div');
+        feedbackElement.id="feedback";
+
+        if(userAnswer===questionAnswer){
+          //correct feedback
+          score++;
+          console.log("current answer score",score);
+          feedbackElement.textContent="Correct";
+          feedbackElement.style.color="green";
+        }
+        else{
+          //wrong feedback and show what is corre
+          feedbackElement.textContent=`Wrong.Correct answer:${questionAnswer}`
+          feedbackElement.style.color="red"
+        }
+        const optionsElement=document.getElementById('options');
+        optionsElement.appendChild(feedbackElement);
+        updateScore();
+      }
+      function updateScore(){
+        document.getElementById("score").textContent=`Score: ${score}`
+      }
+      function endQuiz() {
+        document.getElementById("question-container").innerHTML=`
+        <h1>Quiz Completed!</h1>
+        <p>Your final score: ${score}/${currentQuestions.length}</p>
+        <button id="home-button">Go to Home</button>
+        `;
+        document.getElementById("home-button").addEventListener("click", function() {
+            document.getElementById("quiz-container").style.display = "grid";
+            document.getElementById("question-container").style.display = "none";
+        });
     }
-});
+    
+      document.getElementById("next-button").addEventListener("click", () => {
+        if (currentQuestionsIndex >= currentQuestions.length - 1) {
+          // quizOver();
+          endQuiz();
+          console.log("quiz over");
+        } else {
+          answerSelected=false;
+          currentQuestionsIndex++;
+          showQuesiotn();
+        }
+      });
+    }
+  })
+);

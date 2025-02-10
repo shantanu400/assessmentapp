@@ -1,115 +1,130 @@
-
-
-
-body{
-    height: 100vh;
-    width: 100vw;
-    background-image:url(./img/test_yourself.jpg);
-        
-    background-size: cover;
-    
-    background-repeat: no-repeat;
-    overflow-x:hidden;
- 
- 
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    }
-
-h1{
-    color: #fafafa;
-  
-    text-decoration-line: underline;
-  text-decoration-style: dotted;
+body,html{
+  height: 100%;
+  width: 100%;
+  margin: 1rem 0rem;
+  padding: 0;
+  font-family: "Inter",sans-serif;
+  background-color: #f0f0f8;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
-
 #quiz-container{
-    height: fit-content;   /*  70vh means the height of my screen which is visible now it will take 70% of that  means if we roll page it will not keep increasing its width . To make possible that it keep increasing its width we use height:fit-content  */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; 
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-bottom: 10%;
-   
-
- 
+  display:grid;
+  width:100%;
+  height:100%;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: repeat(2,1fr);
+  gap:20px;
+  padding:1rem;
 }
-.card{
-    width: 350px !important;
-    box-sizing: border-box;
-    margin-top: 5px;
-}
-
-.img1{
-    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-size:cover;
-    border: 2px solid rgb(80, 134, 180);
-    border-radius: 5px;
-
+.section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition: transform 0.3s ease;
+  font-size:24px;
+  font-weight: 600;
+  color:#333333;
 }
 
-.img2{
-    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-size:cover;
-    border: 2px solid rgb(80, 134, 180);
-    border-radius: 5px;
-
+.section:hover{
+  transform:translateY(-5px);
 }
-.img3{
-  
-    
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-size:cover;
-    border: 2px solid rgb(80, 134, 180);
-    border-radius: 5px;
-
+.section[data-section="0"]{
+  background-color: #ffde59;
+}
+.section[data-section="1"]{
+  background-color: #ff928b;
+}
+.section[data-section="2"]{
+  background-color: #8bf6ff;
+}
+.section[data-section="3"]{
+  background-color: #baffc9;
 }
 
-.img4{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;   /* used to fill with the image without resizing defined for image only  */
-    background-size:cover;
-    border: 2px solid rgb(80, 134, 180);
-    border-radius: 5px;
-}
-
-
-.selected{
-    background-color: blanchedalmond;
-}
-#question{
-    color: #000000;
-    
-}
-#options{
-    color: hsl(53, 100%, 33%);
-    
+#question-containe{
+  display: none;
+  margin-top: 20px;
 }
 #score{
-    color: rgb(0, 244, 163);
-    font-weight: 900 ;
+  font-size:20px;
+  margin-bottom :15px;
 }
+#question{
+  font-size:24px;
+  margin-bottom: 20px;
+}
+#options div{
+  padding: 10px;
+  margin:5px;
+  background-color: #ffffff;
+  border:1px solid #007bff;
+  border-radius: 5px;
+  cursor:pointer;
+}
+#next-button {
+  display: block;
 
-    
-@media (max-width: 600px) {
-    body {
-      background-color: rgb(187, 220, 40);
-      height: fit-content;
-    }
-    .container{
-        background-image: url(./img/test_yourself.jpg);
-        height: fit-content;      /*   To make possible that it keep increasing its width we use height:fit-content  */
-    }
-    
-  }
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  background-color:#0056b3;
+  cursor: pointer;
+}
+#next-button:hover{
+  background-color: #ffffff;
+  color:#007bff
+}
+#selected{
+  background-color:#d1e0ff;
+}
+#feedback{
+  font-size: 18px;
+  font-weight:bold;
+  margin:5px 0px;
+  margin-top:10px;
+  background-color: transparent;
+  border:0px solid #fff;
+  border-radius: 5px;
+  cursor:default;
+}
+#feedback:hover{
+  background-color: transparent;
+}
+input[type="text"],input[type="number"]{
+  width:80%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #007bff;
+  border-radius:5px;
+  font-size:16px;
+  font-family: "Inter",sans-serif;
+
+}
+button.submit-answer{
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #28a745;
+  color:white;
+  border:none;
+  border-radius: 5px;
+  cursor:pointer;
+  transition: background-color 0.2s ease;
+
+
+}
+button.submit-answer:hover{
+  background-color: #218838;
+
+}
